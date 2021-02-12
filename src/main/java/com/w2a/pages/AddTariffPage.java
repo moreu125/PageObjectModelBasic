@@ -2,11 +2,15 @@ package com.w2a.pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class AddTariffPage {
-     WebDriver driver;
-	public AddTariffPage(WebDriver driver) {
-		// TODO Auto-generated constructor stub
-		this.driver = driver;
+import com.w2a.BasePages.Page;
+
+public class AddTariffPage extends Page{
+
+	public String getTitle() {
+		// TODO Auto-generated method stub
+		return  driver.getTitle();
+		
 	}
+     
 
 }
