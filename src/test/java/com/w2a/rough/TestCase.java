@@ -1,5 +1,10 @@
 package com.w2a.rough;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -17,7 +22,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestCase {
 
 
-	@Test
+	//@Test
 	public void demoTest() {
 
 		HomePageClass homePage = new HomePageClass();
@@ -28,7 +33,7 @@ public class TestCase {
 
 	}
     
-	@Test
+	//@Test
 	public void demoTest2() {
 		HomePageClass homePage = new HomePageClass();
         System.out.println(homePage.getTitle());
@@ -36,11 +41,35 @@ public class TestCase {
 		
 	}
 	
-	@AfterMethod
+	
+	
+	
+	@Test
+	public void readPropertiesFile() throws FileNotFoundException, IOException {
+		File file = new File(".\\src\\test\\resources\\Properties\\config.properties");
+		Properties pro = new Properties();
+		pro.load(new FileInputStream(file));
+		System.out.println(pro.get("browser"));
+	}
+	//@AfterMethod
 	public  void tearDown() {
 	 Page.tearDown();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
