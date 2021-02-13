@@ -22,8 +22,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class TestCase {
 
 
-	//@Test
-	public void demoTest() {
+	@Test
+	public void demoTest() throws IOException {
 
 		HomePageClass homePage = new HomePageClass();
 		System.out.println(homePage.getTitle());
@@ -33,8 +33,8 @@ public class TestCase {
 
 	}
     
-	//@Test
-	public void demoTest2() {
+	@Test
+	public void demoTest2() throws IOException {
 		HomePageClass homePage = new HomePageClass();
         System.out.println(homePage.getTitle());
 		AddTariffPage addTariffPage = homePage.goToAddTariffPage();
@@ -50,8 +50,9 @@ public class TestCase {
 		Properties pro = new Properties();
 		pro.load(new FileInputStream(file));
 		System.out.println(pro.get("browser"));
+	    HomePageClass homePage = new HomePageClass();
 	}
-	//@AfterMethod
+	@AfterMethod
 	public  void tearDown() {
 	 Page.tearDown();
 	}
